@@ -227,13 +227,9 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[700px] flex items-center">
+      <section className="relative min-h-[700px] flex items-center pb-35">
         <div className="absolute inset-0 bg-gradient-to-r from-background to-background/80 z-10" />
-        <img
-          src={heroImage}
-          alt="Construction team reviewing blueprints at modern construction site"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+       
         <div className="container mx-auto px-4 lg:px-8 relative z-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -244,11 +240,11 @@ const HomePage = () => {
                 Embrace cutting-edge advancements like 3D printing, modular construction, and drones to revolutionize design, efficiency, and project delivery in the construction industry.
               </p>
               <div className="flex gap-4">
-                <CustomButton size="lg" className="font-semibold">
-                  <BookOpen className="w-5 h-5 mr-2" />
+                <CustomButton size="lg" className="font-semibold ">
+                  <BookOpen className="w-5 h-5 mr-2 " />
                   Book now
                 </CustomButton>
-                <CustomButton variant="outline" size="lg" className="font-semibold">
+                <CustomButton variant="outline" size="lg" className="font-semibold ">
                   <Phone className="w-5 h-5 mr-2" />
                   Call us
                 </CustomButton>
