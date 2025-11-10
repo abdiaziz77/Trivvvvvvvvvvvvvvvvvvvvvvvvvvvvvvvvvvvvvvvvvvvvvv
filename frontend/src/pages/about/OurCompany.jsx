@@ -234,14 +234,14 @@ const OurCompany = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section - Company Focus */}
-      <section className="relative min-h-[600px] flex items-center pb-35 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
-        <div className="absolute inset-0 bg-black/40 z-10" />
+      <section className="relative min-h-[600px] flex items-center pb-35 bg-gray-50 text-black">
+        <div className="absolute inset-0  z-10" />
         <div className="container mx-auto px-4 lg:px-8 relative z-20">
           <div className="max-w-4xl">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Building Excellence Since 2009
             </h1>
-            <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+            <p className="text-xl text-black mb-8 leading-relaxed">
               For over 15 years, we've been at the forefront of construction innovation, 
               combining traditional craftsmanship with cutting-edge technology to create 
               spaces that inspire and endure.
@@ -250,7 +250,7 @@ const OurCompany = () => {
               <CustomButton size="lg" className="font-semibold bg-[#F4B942] hover:bg-[#F4B942]/90">
                 Our Story
               </CustomButton>
-              <CustomButton variant="outline" size="lg" className="font-semibold border-white text-white hover:bg-white hover:text-gray-900">
+              <CustomButton variant="outline" size="lg" className="font-semibold border-white text-[#F4B942] hover:bg-white hover:text-gray-900">
                 Meet Our Team
               </CustomButton>
             </div>
