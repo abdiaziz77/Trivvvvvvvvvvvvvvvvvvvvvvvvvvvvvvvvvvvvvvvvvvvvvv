@@ -106,7 +106,7 @@ const Navbar = () => {
                     <div className="text-xs text-gray-600 mt-1 group-hover:text-[#F4B942]">Executive management</div>
                   </Link>
                   <Link
-                    to="/about/team"
+                    to="/about/Management"
                     className="block px-6 py-4 text-sm text-gray-800 hover:bg-[#F4B942]/10 hover:text-[#F4B942] transition duration-300 border-l-4 border-transparent hover:border-[#F4B942] group"
                     onClick={closeDropdowns}
                   >
