@@ -27,13 +27,15 @@ import {
   Truck
 } from "lucide-react";
 
-// Temporary placeholder URLs - replace with actual images later
-const metalRoof = "https://images.unsplash.com/photo-1586023492120-925d7e6e5c0f?w=600";
-const asphaltRoof = "https://images.unsplash.com/photo-1560518888-93cd76c8d139?w=600";
-const tileRoof = "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?w=600";
-const flatRoof = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600";
-const roofingProcess = "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600";
-const roofingTeam = "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600";
+// Import images from assets
+import metalRoof from "../../assets/images/roof5.jpg";
+import asphaltRoof from "../../assets/images/roof1.jpg";
+import tileRoof from "../../assets/images/roof2.jpg";
+import flatRoof from "../../assets/images/roof3.jpg";
+import roofingTeam from "../../assets/images/rooofhero2.jpg";
+
+// Unsplash image for roofing process only
+const roofingProcessImage = "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&auto=format&fit=crop&q=60";
 
 const RoofingSolutions = () => {
   // Custom Button Component
@@ -390,13 +392,13 @@ const RoofingSolutions = () => {
         </div>
       </section>
 
-      {/* Process Section with Image */}
+      {/* Process Section with Unsplash Image */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <img
-                src={roofingProcess}
+                src={roofingProcessImage}
                 alt="Professional roofing installation process"
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
