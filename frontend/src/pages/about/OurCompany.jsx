@@ -27,6 +27,8 @@ import image3 from "../../assets/images/3.jpg";
 import image4 from "../../assets/images/4.jpg";
 import image5 from "../../assets/images/5.jpg";
 import image6 from "../../assets/images/6.jpg";
+// Add construction background image - you can replace this with your actual image
+import constructionHero from "../../assets/images/construction-hero.jpg";
 
 const OurCompany = () => {
   const companyStats = [
@@ -242,25 +244,132 @@ const OurCompany = () => {
               Building Excellence Since 2009
             </h1>
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+    <div className="min-h-screen">
+      {/* Enhanced Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden">
+        {/* Background Image with Enhanced Styling */}
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
+          style={{
+            backgroundImage: `url(${constructionHero})`,
+            backgroundAttachment: 'fixed',
+          }}
+        >
+          {/* Enhanced Overlay with Gradient */}
+          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
+          {/* Subtle Pattern Overlay */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-black/20 to-black/60"></div>
+        </div>
+        
+        {/* Content Container */}
+        <div className="container mx-auto px-4 lg:px-8 relative z-20">
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Animated Badge */}
+            <div className="inline-flex items-center gap-2 bg-[#F4B942]/20 backdrop-blur-sm border border-[#F4B942]/30 rounded-full px-6 py-3 mb-8 animate-fade-in">
+              <Award className="w-5 h-5 text-[#F4B942]" />
+              <span className="text-[#F4B942] font-semibold text-sm uppercase tracking-wide">
+                Industry Leaders Since 2009
+              </span>
+            </div>
+
+            {/* Main Heading - Single Line */}
+            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-6 animate-slide-up">
+              Building <span className="text-[#F4B942]">Excellence</span> Together
+            </h1>
+
+            {/* Subtitle */}
+            <p className="text-xl lg:text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl mx-auto animate-slide-up delay-100">
               For over 15 years, we've been at the forefront of construction innovation, 
               combining traditional craftsmanship with cutting-edge technology to create 
-              spaces that inspire and endure.
+              spaces that inspire and endure for generations.
             </p>
-            <div className="flex gap-4">
-              <CustomButton size="lg" className="font-semibold bg-[#F4B942] hover:bg-[#F4B942]/90">
-                Our Story
+
+            {/* Enhanced CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up delay-300 mb-16">
+              <CustomButton 
+                size="xl" 
+                className="font-bold bg-[#F4B942] hover:bg-[#F4B942]/90 text-gray-900 shadow-2xl hover:shadow-3xl min-w-[220px] text-lg"
+              >
+                <Play className="w-6 h-6 mr-3" />
+                Explore Our Story
               </CustomButton>
               <CustomButton variant="outline" size="lg" className="font-semibold border-[#F4B942] text-[#F4B942] hover:bg-[#F4B942] hover:text-white">
                 Meet Our Team
+              <CustomButton 
+                variant="outline" 
+                size="xl" 
+                className="font-bold border-2 border-white text-white hover:bg-white hover:text-gray-900 backdrop-blur-sm min-w-[220px] text-lg"
+              >
+                View Our Projects
+                <ChevronRight className="w-6 h-6 ml-3" />
               </CustomButton>
             </div>
+
+            {/* Trust Indicators */}
+            <div className="animate-slide-up delay-500">
+              <p className="text-white/70 text-lg mb-6 uppercase tracking-wide font-semibold">
+                Trusted By Industry Leaders
+              </p>
+              <div className="flex justify-center items-center gap-8 opacity-80">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+                  <span className="text-white font-semibold">ISO Certified</span>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+                  <span className="text-white font-semibold">LEED Accredited</span>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+                  <span className="text-white font-semibold">Award Winning</span>
+                </div>
+              </div>
+            </div>
           </div>
+
+       
         </div>
+
+        {/* Add custom animations */}
+        <style jsx>{`
+          @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes slide-up {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .animate-fade-in {
+            animation: fade-in 1s ease-out;
+          }
+          .animate-slide-up {
+            animation: slide-up 1s ease-out;
+          }
+          .animate-slide-up.delay-100 {
+            animation-delay: 0.1s;
+            animation-fill-mode: both;
+          }
+          .animate-slide-up.delay-300 {
+            animation-delay: 0.3s;
+            animation-fill-mode: both;
+          }
+          .animate-slide-up.delay-500 {
+            animation-delay: 0.5s;
+            animation-fill-mode: both;
+          }
+        `}</style>
       </section>
 
       {/* Company Stats */}
       <section className="py-16 bg-yellow-50">
+      {/* Company Stats - Moved to separate section */}
+      <section className="py-16 bg-[#F4B942]/10">
         <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Impact in Numbers</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Delivering exceptional results through dedication, expertise, and innovation.
+            </p>
+          </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {companyStats.map((stat, index) => (
               <div key={index} className="text-center">

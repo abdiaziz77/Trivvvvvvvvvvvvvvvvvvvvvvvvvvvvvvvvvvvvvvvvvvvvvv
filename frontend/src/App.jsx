@@ -22,6 +22,7 @@ import InteriorFinishing from './pages/services/InteriorFinishing';
 import RoofingSolutions from './pages/services/RoofingSolutions';
 import FoundationRepair from './pages/services/FoundationRepair';
 import ElectricalAndPlumbing from './pages/services/ElectricalAndPumbing';
+import Government from './pages/services/Government';
 
 // Projects Pages
 import Ongoing from './pages/projects/Ongoing';
@@ -47,6 +48,7 @@ import CompanyNews from './pages/Blogs/CompanyNews';
 import ConstructionTips from './pages/Blogs/ConstructionTips';
 import SafetyAndSustainability from './pages/Blogs/SafetyAndSustainability';
 import IndustryUpdates from './pages/Blogs/IndustryUpdates';
+
 
 
 // Additional Pages
@@ -75,7 +77,7 @@ function App() {
             <Route path="/services/roofing" element={<RoofingSolutions />} />
             <Route path="/services/foundation" element={<FoundationRepair />} />
             <Route path="/services/electrical" element={<ElectricalAndPlumbing />} />
-            <Route path="/services/government" element={<BuildingConstruction />} />
+            <Route path="/services/government" element={<Government />} />
 
             {/* Projects Routes */}
             <Route path="/projects/featured" element={<Featured />} />
