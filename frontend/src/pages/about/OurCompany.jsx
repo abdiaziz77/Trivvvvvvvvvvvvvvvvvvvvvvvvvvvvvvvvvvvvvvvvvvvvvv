@@ -234,16 +234,8 @@ const OurCompany = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section - Company Focus */}
-      <section className="relative min-h-[600px] flex items-center pb-35 bg-gradient-to-r from-yellow-50 to-yellow-100">
-        <div className="absolute inset-0 bg-yellow-200/20 z-10" />
-        <div className="container mx-auto px-4 lg:px-8 relative z-20">
-          <div className="max-w-4xl">
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900">
-              Building Excellence Since 2009
-            </h1>
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+   
+    
     <div className="min-h-screen">
       {/* Enhanced Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden">
@@ -296,6 +288,7 @@ const OurCompany = () => {
               </CustomButton>
               <CustomButton variant="outline" size="lg" className="font-semibold border-[#F4B942] text-[#F4B942] hover:bg-[#F4B942] hover:text-white">
                 Meet Our Team
+                 </CustomButton>
               <CustomButton 
                 variant="outline" 
                 size="xl" 
@@ -384,6 +377,7 @@ const OurCompany = () => {
             ))}
           </div>
         </div>
+      </section>
       </section>
 
       {/* Our Story Section */}
@@ -636,6 +630,7 @@ const OurCompany = () => {
         </div>
       </section>
     </div>
+    
   );
 };
 
