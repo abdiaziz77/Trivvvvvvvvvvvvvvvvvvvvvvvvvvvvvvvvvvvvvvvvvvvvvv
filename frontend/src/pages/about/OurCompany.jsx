@@ -193,7 +193,7 @@ const OurCompany = () => {
   const CustomCard = ({ children, className = "", ...props }) => {
     return (
       <div 
-        className={`rounded-lg border bg-card text-card-foreground shadow-sm hover:shadow-xl transition-all duration-300 ${className}`}
+        className={`rounded-lg border bg-white text-card-foreground shadow-sm hover:shadow-xl transition-all duration-300 ${className}`}
         {...props}
       >
         {children}
@@ -234,6 +234,16 @@ const OurCompany = () => {
   };
 
   return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section - Company Focus */}
+      <section className="relative min-h-[600px] flex items-center pb-35 bg-gradient-to-r from-yellow-50 to-yellow-100">
+        <div className="absolute inset-0 bg-yellow-200/20 z-10" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-20">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900">
+              Building Excellence Since 2009
+            </h1>
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
     <div className="min-h-screen">
       {/* Enhanced Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden">
@@ -284,6 +294,8 @@ const OurCompany = () => {
                 <Play className="w-6 h-6 mr-3" />
                 Explore Our Story
               </CustomButton>
+              <CustomButton variant="outline" size="lg" className="font-semibold border-[#F4B942] text-[#F4B942] hover:bg-[#F4B942] hover:text-white">
+                Meet Our Team
               <CustomButton 
                 variant="outline" 
                 size="xl" 
@@ -347,6 +359,8 @@ const OurCompany = () => {
         `}</style>
       </section>
 
+      {/* Company Stats */}
+      <section className="py-16 bg-yellow-50">
       {/* Company Stats - Moved to separate section */}
       <section className="py-16 bg-[#F4B942]/10">
         <div className="container mx-auto px-4 lg:px-8">
@@ -373,7 +387,7 @@ const OurCompany = () => {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -409,7 +423,7 @@ const OurCompany = () => {
       </section>
 
       {/* Our Values Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-yellow-50">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Values</h2>
@@ -419,9 +433,9 @@ const OurCompany = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <CustomCard key={index} className="text-center p-8 hover:shadow-lg transition-shadow border-[#F4B942]/20 group">
-                <div className="w-16 h-16 rounded-full bg-[#F4B942]/10 flex items-center justify-center mb-6 group-hover:bg-[#F4B942]/20 transition-colors mx-auto">
-                  <value.icon className="w-8 h-8 text-[#F4B942]" />
+              <CustomCard key={index} className="text-center p-8 hover:shadow-lg transition-shadow border-yellow-200 group">
+                <div className="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center mb-6 group-hover:bg-yellow-200 transition-colors mx-auto">
+                  <value.icon className="w-8 h-8 text-yellow-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{value.description}</p>
@@ -432,7 +446,7 @@ const OurCompany = () => {
       </section>
 
       {/* Company Timeline */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Journey</h2>
@@ -443,21 +457,21 @@ const OurCompany = () => {
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               {/* Timeline line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-[#F4B942] h-full"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-yellow-400 h-full"></div>
               
               {timeline.map((item, index) => (
                 <div key={index} className={`relative flex items-center mb-12 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                   {/* Content */}
                   <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12'}`}>
-                    <CustomCard className="p-6 border-[#F4B942]/20">
-                      <div className="text-2xl font-bold text-[#F4B942] mb-2">{item.year}</div>
+                    <CustomCard className="p-6 border-yellow-200">
+                      <div className="text-2xl font-bold text-yellow-600 mb-2">{item.year}</div>
                       <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
                       <p className="text-gray-600">{item.description}</p>
                     </CustomCard>
                   </div>
                   
                   {/* Timeline dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#F4B942] border-4 border-white shadow-lg"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-yellow-500 border-4 border-white shadow-lg"></div>
                   
                   {/* Spacer for the other side */}
                   <div className="w-1/2"></div>
@@ -469,7 +483,7 @@ const OurCompany = () => {
       </section>
 
       {/* Leadership Team */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-yellow-50">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Leadership Team</h2>
@@ -479,7 +493,7 @@ const OurCompany = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {leadershipTeam.map((member, index) => (
-              <CustomCard key={index} className="text-center overflow-hidden group border-[#F4B942]/20">
+              <CustomCard key={index} className="text-center overflow-hidden group border-yellow-200">
                 <div className="relative overflow-hidden">
                   <img
                     src={member.image}
@@ -489,7 +503,7 @@ const OurCompany = () => {
                 </div>
                 <CustomCardContent className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                  <div className="text-[#F4B942] font-semibold mb-4">{member.position}</div>
+                  <div className="text-yellow-600 font-semibold mb-4">{member.position}</div>
                   <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
                 </CustomCardContent>
               </CustomCard>
@@ -499,7 +513,7 @@ const OurCompany = () => {
       </section>
 
       {/* Certifications & Accreditations */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -511,8 +525,8 @@ const OurCompany = () => {
               <div className="space-y-4">
                 {certifications.map((cert, index) => (
                   <div key={index} className="flex items-center gap-4">
-                    <div className="w-6 h-6 rounded-full bg-[#F4B942]/10 flex items-center justify-center flex-shrink-0">
-                      <Check className="w-4 h-4 text-[#F4B942]" />
+                    <div className="w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center flex-shrink-0">
+                      <Check className="w-4 h-4 text-yellow-600" />
                     </div>
                     <span className="font-medium text-gray-900">{cert}</span>
                   </div>
@@ -531,7 +545,7 @@ const OurCompany = () => {
       </section>
 
       {/* Community Involvement */}
-      <section className="py-16 bg-[#F4B942]/10">
+      <section className="py-16 bg-yellow-50">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Community Commitment</h2>
@@ -541,8 +555,8 @@ const OurCompany = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {communityInitiatives.map((initiative, index) => (
-              <CustomCard key={index} className="p-6 text-center hover:shadow-lg transition-shadow border-[#F4B942]/20">
-                <div className="w-12 h-12 rounded-full bg-[#F4B942] flex items-center justify-center mb-4 mx-auto">
+              <CustomCard key={index} className="p-6 text-center hover:shadow-lg transition-shadow border-yellow-200">
+                <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center mb-4 mx-auto">
                   <Heart className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">{initiative.title}</h3>
@@ -554,7 +568,7 @@ const OurCompany = () => {
       </section>
 
       {/* Company Culture */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -578,20 +592,20 @@ const OurCompany = () => {
               </p>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#F4B942]/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-4 h-4 text-[#F4B942]" />
+                  <div className="w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-yellow-600" />
                   </div>
                   <span className="font-medium text-gray-900">Continuous Learning & Development</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#F4B942]/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-4 h-4 text-[#F4B942]" />
+                  <div className="w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-yellow-600" />
                   </div>
                   <span className="font-medium text-gray-900">Collaborative Team Environment</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#F4B942]/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-4 h-4 text-[#F4B942]" />
+                  <div className="w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-yellow-600" />
                   </div>
                   <span className="font-medium text-gray-900">Work-Life Balance Focus</span>
                 </div>
@@ -602,10 +616,10 @@ const OurCompany = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-gray-900 text-white">
+      <section className="py-16 bg-yellow-500">
         <div className="container mx-auto px-4 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-4">Join Our Story</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4 text-white">Join Our Story</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-yellow-100">
             Whether you're looking to build with us, partner with us, or join our team, 
             we'd love to hear from you and explore how we can create something amazing together.
           </p>
@@ -614,7 +628,7 @@ const OurCompany = () => {
               <Phone className="w-5 h-5 mr-2" />
               Contact Us
             </CustomButton>
-            <CustomButton size="lg" variant="outline" className="font-semibold border-white text-white hover:bg-white hover:text-gray-900">
+            <CustomButton size="lg" variant="outline" className="font-semibold border-white text-white hover:bg-white hover:text-yellow-600">
               <Mail className="w-5 h-5 mr-2" />
               Career Opportunities
             </CustomButton>
