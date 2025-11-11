@@ -94,10 +94,10 @@ const Navbar = () => {
                 onClick={closeDropdowns}
               >
                 <div className="h-12 w-12 bg-gradient-to-br from-[#F4B942] to-red-600 rounded-xl flex items-center justify-center mr-3 shadow-lg group-hover:shadow-xl transition duration-300">
-                  <span className="text-white font-bold text-xl">T</span>
+                  <span className="text-white font-bold text-xl">J</span>
                 </div>
                 <div className="text-left">
-                  <h1 className="text-2xl font-black text-gray-900 tracking-tight">TRIBULD</h1>
+                  <h1 className="text-2xl font-black text-gray-900 tracking-tight">JengaNow</h1>
                   <p className="text-xs font-semibold text-[#F4B942] tracking-widest uppercase">CONSTRUCTION</p>
                 </div>
               </Link>

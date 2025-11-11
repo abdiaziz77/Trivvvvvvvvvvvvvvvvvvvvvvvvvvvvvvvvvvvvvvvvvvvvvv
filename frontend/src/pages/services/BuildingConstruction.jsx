@@ -86,7 +86,7 @@ const BuildingConstruction = () => {
 
   const CustomCardTitle = ({ children, className = "" }) => {
     return (
-      <h3 className={`text-2xl font-semibold leading-none tracking-tight ${className}`}>
+      <h3 className={`text-xl font-semibold leading-none tracking-tight ${className}`}>
         {children}
       </h3>
     );
@@ -236,7 +236,7 @@ const BuildingConstruction = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white text-base">
       {/* Hero Section - Improved for full image display */}
       <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-r from-gray-900 to-gray-800 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/30 z-10" />
@@ -251,10 +251,10 @@ const BuildingConstruction = () => {
         />
         <div className="container mx-auto px-4 lg:px-8 relative z-20 text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-2xl">
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6 drop-shadow-2xl">
               Building Renovation & Modernization
             </h1>
-            <p className="text-xl lg:text-2xl mb-8 text-gray-100 font-light max-w-3xl mx-auto drop-shadow-lg">
+            <p className="text-4xl lg:text-2xl mb-8 text-gray-100 font-italic max-w-3xl mx-auto drop-shadow-lg">
               Transform existing structures into modern, efficient, and valuable assets through expert renovation and strategic upgrades.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -272,20 +272,20 @@ const BuildingConstruction = () => {
       </section>
 
       {/* Stats Section - Enhanced color usage */}
-      <section className="py-20 bg-gradient-to-br from-[#F4B942]/15 to-[#F4B942]/5">
+      <section className="py-16 bg-gradient-to-br from-[#F4B942]/15 to-[#F4B942]/5">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-6 gap-8">
             {renovationStats.map((stat, index) => (
               <div key={index} className="text-center group">
                 <div className="flex justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#F4B942] to-[#e6a932] flex items-center justify-center shadow-lg">
-                    <stat.icon className="w-10 h-10 text-white" />
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#F4B942] to-[#e6a932] flex items-center justify-center shadow-lg">
+                    <stat.icon className="w-8 h-8 text-white" />
                   </div>
                 </div>
-                <div className="text-4xl lg:text-5xl font-bold mb-2 text-gray-900 bg-gradient-to-r from-[#F4B942] to-[#e6a932] bg-clip-text text-transparent">
+                <div className="text-3xl lg:text-4xl font-bold mb-2 text-gray-900 bg-gradient-to-r from-[#F4B942] to-[#e6a932] bg-clip-text text-transparent">
                   {stat.number}
                 </div>
-                <div className="text-base font-medium text-gray-700">{stat.label}</div>
+                <div className="text-sm font-medium text-gray-700">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -293,33 +293,33 @@ const BuildingConstruction = () => {
       </section>
 
       {/* Services Section - Improved card design */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-[#F4B942] to-[#e6a932] bg-clip-text text-transparent">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#F4B942] to-[#e6a932] bg-clip-text text-transparent">
               Comprehensive Renovation Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               From structural upgrades to modern amenities, we transform existing buildings into contemporary, efficient spaces that stand the test of time.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {renovationServices.map((service, index) => (
               <CustomCard key={index} className="hover:shadow-2xl transition-all duration-500 h-full group border-2 border-[#F4B942]/20 hover:border-[#F4B942]/40 bg-gradient-to-b from-white to-gray-50/50">
                 <CustomCardHeader className="pb-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#F4B942] to-[#e6a932] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <service.icon className="w-8 h-8 text-white" />
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F4B942] to-[#e6a932] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <service.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#F4B942] transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#F4B942] transition-colors duration-300">
                     {service.title}
                   </h3>
                 </CustomCardHeader>
                 <CustomCardContent className="pt-0">
-                  <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-                  <ul className="space-y-3">
+                  <p className="text-gray-600 mb-4 leading-relaxed text-sm">{service.description}</p>
+                  <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-gray-700">
-                        <div className="w-6 h-6 rounded-full bg-[#F4B942]/20 flex items-center justify-center flex-shrink-0">
+                      <li key={idx} className="flex items-center gap-2 text-gray-700 text-sm">
+                        <div className="w-5 h-5 rounded-full bg-[#F4B942]/20 flex items-center justify-center flex-shrink-0">
                           <Check className="w-3 h-3 text-[#F4B942]" />
                         </div>
                         <span className="font-medium">{feature}</span>
@@ -334,41 +334,41 @@ const BuildingConstruction = () => {
       </section>
 
       {/* Benefits Section - Full image display */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={RB57}
                   alt="Renovation team planning building upgrades"
-                  className="w-full h-[600px] object-cover transform hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[500px] object-cover transform hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-[#F4B942] rounded-2xl flex items-center justify-center shadow-xl">
-                <Award className="w-12 h-12 text-white" />
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-[#F4B942] rounded-2xl flex items-center justify-center shadow-xl">
+                <Award className="w-10 h-10 text-white" />
               </div>
             </div>
-            <div className="space-y-8">
-              <h2 className="text-5xl font-bold bg-gradient-to-r from-[#F4B942] to-[#e6a932] bg-clip-text text-transparent">
+            <div className="space-y-6">
+              <h2 className="text-4xl font-bold bg-gradient-to-r from-[#F4B942] to-[#e6a932] bg-clip-text text-transparent">
                 Why Choose Building Renovation?
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed">
                 Renovation offers significant advantages over new construction, including substantial cost savings, reduced environmental impact, and preservation of unique architectural character that tells your building's story.
               </p>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {renovationBenefits.map((benefit, index) => (
-                  <div key={index} className="flex items-center gap-4 p-4 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 group">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#F4B942] to-[#e6a932] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <Check className="w-6 h-6 text-white" />
+                  <div key={index} className="flex items-center gap-3 p-3 rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#F4B942] to-[#e6a932] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <Check className="w-5 h-5 text-white" />
                     </div>
-                    <span className="text-lg font-semibold text-gray-800">{benefit}</span>
+                    <span className="font-semibold text-gray-800 text-sm">{benefit}</span>
                   </div>
                 ))}
               </div>
-              <CustomButton size="lg" className="font-semibold text-lg px-8 py-4">
-                <BookOpen className="w-6 h-6 mr-3" />
+              <CustomButton size="lg" className="font-semibold px-6 py-3">
+                <BookOpen className="w-5 h-5 mr-2" />
                 Calculate Your ROI
               </CustomButton>
             </div>
@@ -377,31 +377,31 @@ const BuildingConstruction = () => {
       </section>
 
       {/* Process Section - Enhanced design */}
-      <section className="py-20 bg-gradient-to-br from-[#F4B942]/10 to-[#F4B942]/5">
+      <section className="py-16 bg-gradient-to-br from-[#F4B942]/10 to-[#F4B942]/5">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-[#F4B942] to-[#e6a932] bg-clip-text text-transparent">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#F4B942] to-[#e6a932] bg-clip-text text-transparent">
               Our Renovation Process
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               A systematic approach that ensures minimal disruption, maximum efficiency, and exceptional results for your building renovation journey.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {renovationProcess.map((step, index) => (
               <div key={index} className="text-center group">
-                <div className="relative mb-8">
-                  <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-[#F4B942] to-[#e6a932] flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500 shadow-2xl">
-                    <step.icon className="w-12 h-12 text-white" />
+                <div className="relative mb-6">
+                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#F4B942] to-[#e6a932] flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500 shadow-2xl">
+                    <step.icon className="w-10 h-10 text-white" />
                   </div>
-                  <div className="absolute -top-3 -right-3 w-12 h-12 bg-white rounded-2xl border-4 border-[#F4B942] flex items-center justify-center shadow-lg">
-                    <span className="text-lg font-bold text-[#F4B942]">{step.step}</span>
+                  <div className="absolute -top-2 -right-2 w-10 h-10 bg-white rounded-xl border-4 border-[#F4B942] flex items-center justify-center shadow-lg">
+                    <span className="text-sm font-bold text-[#F4B942]">{step.step}</span>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-[#F4B942] transition-colors duration-300">
+                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-[#F4B942] transition-colors duration-300">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-lg">{step.description}</p>
+                <p className="text-gray-600 leading-relaxed text-sm">{step.description}</p>
               </div>
             ))}
           </div>
@@ -409,33 +409,33 @@ const BuildingConstruction = () => {
       </section>
 
       {/* Projects Section - Full image display */}
-      <section className="py-20 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex justify-between items-center mb-16">
+          <div className="flex justify-between items-center mb-12">
             <div className="max-w-2xl">
-              <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-[#F4B942] to-[#e6a932] bg-clip-text text-transparent">
+              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#F4B942] to-[#e6a932] bg-clip-text text-transparent">
                 Recent Renovation Projects
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed">
                 See how we've transformed outdated buildings into modern, functional spaces that exceed expectations and deliver exceptional long-term value.
               </p>
             </div>
-            <CustomButton size="lg" className="hidden lg:flex font-semibold text-lg px-8">
-              View All Projects <ChevronRight className="w-5 h-5 ml-2" />
+            <CustomButton size="lg" className="hidden lg:flex font-semibold px-6">
+              View All Projects <ChevronRight className="w-4 h-4 ml-2" />
             </CustomButton>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {renovationProjects.map((project, index) => (
               <CustomCard key={index} className="overflow-hidden hover:shadow-2xl transition-all duration-500 group border-2 border-[#F4B942]/20 hover:border-[#F4B942]/40">
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute top-4 right-4">
-                    <span className={`px-4 py-2 rounded-full text-sm font-bold ${
+                  <div className="absolute top-3 right-3">
+                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                       project.status === 'Completed' ? 'bg-green-500 text-white shadow-lg' :
                       project.status === 'In Progress' ? 'bg-[#F4B942] text-white shadow-lg' :
                       'bg-blue-500 text-white shadow-lg'
@@ -444,33 +444,33 @@ const BuildingConstruction = () => {
                     </span>
                   </div>
                 </div>
-                <div className="p-8 space-y-6">
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#F4B942] transition-colors duration-300">
+                <div className="p-6 space-y-4">
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#F4B942] transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed text-lg">{project.description}</p>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3 text-gray-700">
-                      <MapPin className="w-5 h-5 text-[#F4B942]" />
+                  <p className="text-gray-600 leading-relaxed text-sm">{project.description}</p>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-gray-700 text-sm">
+                      <MapPin className="w-4 h-4 text-[#F4B942]" />
                       <span className="font-semibold">{project.location}</span>
                     </div>
-                    <div className="flex items-center gap-3 text-gray-700">
-                      <Calendar className="w-5 h-5 text-[#F4B942]" />
+                    <div className="flex items-center gap-2 text-gray-700 text-sm">
+                      <Calendar className="w-4 h-4 text-[#F4B942]" />
                       <span className="font-semibold">{project.date}</span>
                     </div>
                   </div>
-                  <div className="space-y-3">
-                    <h4 className="font-bold text-lg text-gray-900">Key Upgrades:</h4>
-                    <div className="flex flex-wrap gap-2">
+                  <div className="space-y-2">
+                    <h4 className="font-bold text-gray-900 text-sm">Key Upgrades:</h4>
+                    <div className="flex flex-wrap gap-1">
                       {project.upgrades.map((upgrade, idx) => (
-                        <span key={idx} className="px-3 py-2 bg-gradient-to-r from-[#F4B942]/20 to-[#F4B942]/10 text-[#F4B942] font-semibold text-sm rounded-lg border border-[#F4B942]/30">
+                        <span key={idx} className="px-2 py-1 bg-gradient-to-r from-[#F4B942]/20 to-[#F4B942]/10 text-[#F4B942] font-semibold text-xs rounded border border-[#F4B942]/30">
                           {upgrade}
                         </span>
                       ))}
                     </div>
                   </div>
-                  <CustomButton variant="secondary" className="w-full font-semibold text-lg py-3">
-                    <Eye className="w-6 h-6 mr-2" />
+                  <CustomButton variant="secondary" className="w-full font-semibold py-2 text-sm">
+                    <Eye className="w-4 h-4 mr-2" />
                     View Case Study
                   </CustomButton>
                 </div>
@@ -478,30 +478,30 @@ const BuildingConstruction = () => {
             ))}
           </div>
           
-          <div className="text-center mt-12 lg:hidden">
-            <CustomButton size="lg" className="font-semibold text-lg px-8">
-              View All Projects <ChevronRight className="w-5 h-5 ml-2" />
+          <div className="text-center mt-8 lg:hidden">
+            <CustomButton size="lg" className="font-semibold px-6">
+              View All Projects <ChevronRight className="w-4 h-4 ml-2" />
             </CustomButton>
           </div>
         </div>
       </section>
 
       {/* Final CTA Section - Enhanced with gradient */}
-      <section className="py-20 bg-gradient-to-br from-[#F4B942] to-[#e6a932] text-white">
+      <section className="py-16 bg-gradient-to-br from-[#F4B942] to-[#e6a932] text-white">
         <div className="container mx-auto px-4 lg:px-8 text-center">
-          <h2 className="text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4 drop-shadow-lg">
             Ready to Transform Your Building?
           </h2>
-          <p className="text-xl lg:text-2xl mb-10 max-w-3xl mx-auto text-white/90 leading-relaxed">
+          <p className="text-lg lg:text-xl mb-8 max-w-3xl mx-auto text-white/90 leading-relaxed">
             Get a comprehensive renovation assessment and discover how we can enhance your property's value, efficiency, and functionality for generations to come.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <CustomButton size="xl" variant="secondary" className="font-semibold text-lg px-10 py-5 min-w-[250px] bg-white text-[#F4B942] hover:bg-gray-50 shadow-2xl">
-              <Phone className="w-6 h-6 mr-3" />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <CustomButton size="xl" variant="secondary" className="font-semibold px-8 py-4 min-w-[220px] bg-white text-[#F4B942] hover:bg-gray-50 shadow-2xl">
+              <Phone className="w-5 h-5 mr-2" />
               Schedule Free Assessment
             </CustomButton>
-            <CustomButton size="xl" variant="outline" className="font-semibold text-lg px-10 py-5 min-w-[250px] border-2 border-white text-white hover:bg-white hover:text-[#F4B942] shadow-2xl">
-              <Eye className="w-6 h-6 mr-3" />
+            <CustomButton size="xl" variant="outline" className="font-semibold px-8 py-4 min-w-[220px] border-2 border-white text-white hover:bg-white hover:text-[#F4B942] shadow-2xl">
+              <Eye className="w-5 h-5 mr-2" />
               Download Renovation Guide
             </CustomButton>
           </div>
