@@ -25,10 +25,9 @@ import ElectricalAndPlumbing from './pages/services/ElectricalAndPumbing';
 import Government from './pages/services/Government';
 
 // Projects Pages
-import Ongoing from './pages/projects/Ongoing';
-import Completed from './pages/projects/Completed';
+
 import Featured from './pages/projects/Featured';
-import SuccessStories from './pages/projects/SuccessStories';
+
 
 // Equipment Pages
 import OurMachinery from './pages/Equipments/OurMachinery';
@@ -81,9 +80,7 @@ function App() {
 
             {/* Projects Routes */}
             <Route path="/projects/featured" element={<Featured />} />
-            <Route path="/projects/ongoing" element={<Ongoing />} />
-            <Route path="/projects/completed" element={<Completed />} />
-            <Route path="/projects/success" element={<SuccessStories />} />
+           
 
             {/* Equipment Routes */}
             <Route path="/equipment" element={<OurMachinery />} />
