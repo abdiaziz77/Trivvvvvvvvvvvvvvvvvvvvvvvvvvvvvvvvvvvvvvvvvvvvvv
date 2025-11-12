@@ -87,31 +87,30 @@ const Navbar = () => {
       <nav className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-200">
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            {/* Logo */}
-            <div className="flex items-center">
-              <Link 
-                to="/" 
-                className="flex-shrink-0 flex items-center group"
-                onClick={closeDropdowns}
-              >
-                <div className="h-12 w-12 bg-gradient-to-br from-[#F4B942] to-red-600 flex items-center justify-center mr-3  group-hover:shadow-xl transition duration-300">
-                  <img 
-                    src={logoImage} // Use the imported image
-                    alt="JengaNow Construction" 
-                    className="h-10 w-10"
-                    onError={(e) => {
-                      console.error('Logo image failed to load');
-                      e.target.style.display = 'none';
-                    }}
-                  />
-                </div>
-                <div className="text-left">
-                  <h1 className="text-2xl font-black text-gray-900 tracking-tight">JengaNow</h1>
-                  <p className="text-xs font-semibold text-[#F4B942] tracking-widest uppercase">CONSTRUCTION</p>
-                </div>
-              </Link>
-            </div>
-
+    
+{/* Logo */}
+<div className="flex items-center">
+  <Link 
+    to="/" 
+    className="flex-shrink-0 flex items-center group"
+    onClick={closeDropdowns}
+  >
+    <div className="flex items-center">
+      {/* J centered between two text lines */}
+      <div className="flex flex-col items-center justify-center mr-2">
+        <span className="text-red-600 text-5xl font-black leading-none">J</span>
+      </div>
+      <div className="flex flex-col">
+        <h1 className="text-2xl font-black text-gray-900 tracking-tight leading-none group-hover:text-[#F4B942] transition duration-300 ">
+          engaNow
+        </h1>
+        <p className="text-xs font-semibold text-[#F4B942] tracking-widest uppercase leading-none pt-1">
+          CONSTRUCTION
+        </p>
+      </div>
+    </div>
+  </Link>
+</div>
             {/* Desktop Menu */}
             <div className="hidden xl:flex items-center space-x-1 dropdown-container">
               {/* Home */}
@@ -250,59 +249,17 @@ const Navbar = () => {
                 )}
               </div>
 
-              {/* Projects Dropdown */}
-              <div className="relative dropdown-container">
-                <button
-                  onClick={() => toggleDropdown('projects')}
-                  className={`px-5 py-3 rounded-lg text-sm font-bold flex items-center transition-all duration-300 ${
-                    isActiveRoute('/projects') 
-                      ? 'bg-[#F4B942]/10 text-[#F4B942] border-b-4 border-[#F4B942]' 
-                      : 'text-gray-800 hover:bg-gray-50 hover:text-[#F4B942] hover:border-b-4 hover:border-[#F4B942]'
-                  }`}
-                >
-                  Projects
-                  <svg className={`ml-2 w-4 h-4 transition-transform duration-300 ${openDropdown === 'projects' ? 'rotate-180' : ''}`} 
-                       fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {openDropdown === 'projects' && (
-                  <div className="absolute left-0 w-72 mt-2 py-3 bg-white rounded-xl shadow-2xl z-50 border border-gray-200">
-                    <Link
-                      to="/projects/featured"
-                      className="block px-6 py-4 text-sm text-gray-800 hover:bg-[#F4B942]/10 hover:text-[#F4B942] transition duration-300 border-l-4 border-transparent hover:border-[#F4B942] group"
-                      onClick={closeDropdowns}
-                    >
-                      <div className="font-bold">Featured Projects</div>
-                      <div className="text-xs text-gray-600 mt-1 group-hover:text-[#F4B942]">Showcase developments</div>
-                    </Link>
-                    <Link
-                      to="/projects/ongoing"
-                      className="block px-6 py-4 text-sm text-gray-800 hover:bg-[#F4B942]/10 hover:text-[#F4B942] transition duration-300 border-l-4 border-transparent hover:border-[#F4B942] group"
-                      onClick={closeDropdowns}
-                    >
-                      <div className="font-bold">Ongoing Projects</div>
-                      <div className="text-xs text-gray-600 mt-1 group-hover:text-[#F4B942]">Current developments</div>
-                    </Link>
-                    <Link
-                      to="/projects/completed"
-                      className="block px-6 py-4 text-sm text-gray-800 hover:bg-[#F4B942]/10 hover:text-[#F4B942] transition duration-300 border-l-4 border-transparent hover:border-[#F4B942] group"
-                      onClick={closeDropdowns}
-                    >
-                      <div className="font-bold">Completed Projects</div>
-                      <div className="text-xs text-gray-600 mt-1 group-hover:text-[#F4B942]">Our portfolio</div>
-                    </Link>
-                    <Link
-                      to="/projects/success"
-                      className="block px-6 py-4 text-sm text-gray-800 hover:bg-[#F4B942]/10 hover:text-[#F4B942] transition duration-300 border-l-4 border-transparent hover:border-[#F4B942] group"
-                      onClick={closeDropdowns}
-                    >
-                      <div className="font-bold">Success Stories</div>
-                      <div className="text-xs text-gray-600 mt-1 group-hover:text-[#F4B942]">Client testimonials</div>
-                    </Link>
-                  </div>
-                )}
-              </div>
+              {/* Projects - Single Link */}
+              <Link
+                to="/projects/featured"
+                className={`px-5 py-3 rounded-lg text-sm font-bold transition-all duration-300 ${
+                  isActiveRoute('/projects') 
+                    ? 'bg-[#F4B942]/10 text-[#F4B942] border-b-4 border-[#F4B942]' 
+                    : 'text-gray-800 hover:bg-gray-50 hover:text-[#F4B942] hover:border-b-4 hover:border-[#F4B942]'
+                }`}
+              >
+                Projects
+              </Link>
 
               {/* Equipment Dropdown */}
               <div className="relative dropdown-container">
@@ -586,42 +543,18 @@ const Navbar = () => {
                   )}
                 </div>
 
-                {/* Mobile Projects Dropdown */}
-                <div className="relative dropdown-container">
-                  <button
-                    onClick={() => toggleDropdown('projects-mobile')}
-                    className={`flex justify-between items-center w-full px-4 py-4 rounded-xl text-base font-bold transition duration-300 ${
-                      isActiveRoute('/projects') 
-                        ? 'bg-[#F4B942]/10 text-[#F4B942] border-r-4 border-[#F4B942]' 
-                        : 'text-gray-800 hover:bg-gray-50 hover:text-[#F4B942]'
-                    }`}
-                  >
-                    Projects
-                    <svg className={`w-5 h-5 transition-transform duration-300 ${openDropdown === 'projects-mobile' ? 'rotate-180' : ''}`} 
-                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  {openDropdown === 'projects-mobile' && (
-                    <div className="ml-4 mt-2 space-y-2 bg-gray-50 rounded-lg p-3">
-                      {[
-                        { path: '/projects/featured', name: 'Featured Projects' },
-                        { path: '/projects/ongoing', name: 'Ongoing Projects' },
-                        { path: '/projects/completed', name: 'Completed Projects' },
-                        { path: '/projects/success', name: 'Success Stories' },
-                      ].map((item) => (
-                        <Link
-                          key={item.path}
-                          to={item.path}
-                          className="block px-4 py-3 rounded-lg text-sm text-gray-700 hover:bg-[#F4B942]/10 hover:text-[#F4B942] transition duration-300 font-semibold"
-                          onClick={closeDropdowns}
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                {/* Mobile Projects - Single Link */}
+                <Link
+                  to="/projects/featured"
+                  className={`block px-4 py-4 rounded-xl text-base font-bold transition duration-300 ${
+                    isActiveRoute('/projects') 
+                      ? 'bg-[#F4B942]/10 text-[#F4B942] border-r-4 border-[#F4B942]' 
+                      : 'text-gray-800 hover:bg-gray-50 hover:text-[#F4B942]'
+                  }`}
+                  onClick={closeDropdowns}
+                >
+                  Projects
+                </Link>
 
                 {/* Mobile Equipment Dropdown */}
                 <div className="relative dropdown-container">
