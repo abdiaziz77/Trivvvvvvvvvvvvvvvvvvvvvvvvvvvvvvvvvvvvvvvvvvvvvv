@@ -9,6 +9,8 @@ import Footer from './components/Footer';
 // Pages
 import Home from './pages/Home';
 import Contact from './pages/Contact';
+import Login from './auth/Login';
+import SignUp from './auth/SignUp';
 
 // About Pages
 import OurCompany from './pages/about/OurCompany';
@@ -50,18 +52,21 @@ import IndustryUpdates from './pages/Blogs/IndustryUpdates';
 
 
 
+
 // Additional Pages
 
 
 function App() {
   return (
-    <Router>
+    
       <div className="App min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow">
           <Routes>
             {/* Home Route */}
             <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
 
             {/* About Us Routes */}
             <Route path="/about" element={<OurCompany />} />
@@ -124,7 +129,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </Router>
+  
   );
 }
 
