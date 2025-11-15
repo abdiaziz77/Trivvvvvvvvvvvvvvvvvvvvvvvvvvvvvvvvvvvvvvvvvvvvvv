@@ -1,37 +1,29 @@
-import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
+// src/dashboards/Userdashboard/layout/UserLayout.jsx
+import React from "react";
 import UserSidebar from "./UserSidebar";
+import UserHeader from "./UserHeader";
+import UserFooter from "./UserFooter";
 
-const UserLayout = () => {
-  const [activePage, setActivePage] = useState("dashboard");
-
+const UserLayout = ({ children }) => {
   return (
-    <div className="flex h-screen overflow-hidden">
-
+    <div className="flex h-screen bg-gray-50">
       {/* Sidebar */}
-      <UserSidebar activePage={activePage} setActivePage={setActivePage} />
-
-      {/* Main Content Area */}
+      <UserSidebar />
+      
+      {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
-
-        {/* Header */}
-        <header className="flex items-center justify-between p-4 border-b bg-white shadow-sm">
-          <h1 className="text-xl font-semibold">User Dashboard</h1>
-          <div className="flex items-center space-x-4">
-            <span className="text-gray-600">User Options</span>
-          </div>
-        </header>
-
+        {/* Header - Now slimmer */}
+        <UserHeader />
+        
         {/* Page Content */}
-        <main className="flex-1 overflow-y-auto p-6 bg-gray-50">
-          <Outlet /> {/* This is the FIX */}
+        <main className="flex-1 overflow-y-auto p-4 bg-gray-50/50">
+          <div className="max-w-7xl mx-auto">
+            {children}
+          </div>
         </main>
-
-        {/* Footer */}
-        <footer className="p-4 border-t text-center text-gray-500 bg-white">
-          © 2025 BuildPro. All rights reserved.
-        </footer>
-
+        
+        {/* Footer - Now slimmer */}
+        <UserFooter />
       </div>
     </div>
   );
