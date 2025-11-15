@@ -1,11 +1,11 @@
 import React from 'react'
 
-const FAQ = () => {
+const Payment = () => {
   return (
     <div>
-      faq
+      payment
     </div>
   )
 }
 
-export default FAQ
+export default Payment

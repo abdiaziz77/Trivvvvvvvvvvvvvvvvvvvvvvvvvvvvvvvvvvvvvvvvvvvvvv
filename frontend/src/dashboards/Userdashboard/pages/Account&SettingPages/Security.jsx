@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Support = () => {
+const Security = () => {
   return (
     <div>
-      sapport
+      security
     </div>
   )
 }
 
-export default Support
+export default Security
