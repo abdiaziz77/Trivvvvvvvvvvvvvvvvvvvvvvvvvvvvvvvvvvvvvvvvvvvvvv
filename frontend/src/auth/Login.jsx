@@ -66,7 +66,7 @@ const Login = () => {
       }
       
       // Redirect to dashboard
-      navigate('/dashboard');
+      navigate('/user');
 
     } catch (err) {
       setError(err.message || 'An unexpected error occurred');
