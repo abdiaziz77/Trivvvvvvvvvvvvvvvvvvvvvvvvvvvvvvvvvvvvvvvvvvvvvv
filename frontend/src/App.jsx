@@ -7,7 +7,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 // -------------------------- PUBLIC PAGES --------------------------
-// Public Pages
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Login from './auth/Login';
@@ -95,6 +94,67 @@ import AccountSettingsub from './dashboards/Userdashboard/pages/Account&SettingP
 import PaymentMethods from './dashboards/Userdashboard/pages/Account&SettingPages/PaymentMethods';
 import Security from './dashboards/Userdashboard/pages/Account&SettingPages/Security';
 import Logout from './dashboards/Userdashboard/pages/Account&SettingPages/Logout';
+
+// -------------------------- ADMIN DASHBOARD --------------------------
+import AdminLayout from './dashboards/Admindashboard/layout/AdminLayout';
+
+import AdminOverview from './dashboards/Admindashboard/pages/AdminDashboard/Overview';
+
+// User Management
+import AllUsers from './dashboards/Admindashboard/pages/UserManagement/AllUsers';
+import CreateUser from './dashboards/Admindashboard/pages/UserManagement/CreateUser';
+import Contractors from './dashboards/Admindashboard/pages/UserManagement/Contractors';
+import Clients from './dashboards/Admindashboard/pages/UserManagement/Clients';
+import RolesPermissions from './dashboards/Admindashboard/pages/UserManagement/RolesPermissions';
+
+// Construction Planning
+import CPOverview from './dashboards/Admindashboard/pages/ConstructionPlanning/Overview';
+import ManagePlans from './dashboards/Admindashboard/pages/ConstructionPlanning/ManagePlans';
+import Approvals from './dashboards/Admindashboard/pages/ConstructionPlanning/Approvals';
+import ProgressReports from './dashboards/Admindashboard/pages/ConstructionPlanning/ProgressReports';
+
+// Equipment Management
+import EQInventory from './dashboards/Admindashboard/pages/EquipmentManagement/Inventory';
+import EQApproveRequests from './dashboards/Admindashboard/pages/EquipmentManagement/ApproveRequests';
+import AddEquipment from './dashboards/Admindashboard/pages/EquipmentManagement/AddEquipment';
+import Maintenance from './dashboards/Admindashboard/pages/EquipmentManagement/Maintenance';
+import UsageTracking from './dashboards/Admindashboard/pages/EquipmentManagement/UsageTracking';
+
+// Materials Management
+import MMInventory from './dashboards/Admindashboard/pages/MaterialsManagement/Inventory';
+import SuppliersPage from './dashboards/Admindashboard/pages/MaterialsManagement/Suppliers';
+import MMApproveRequests from './dashboards/Admindashboard/pages/MaterialsManagement/ApproveRequests';
+import Deliveries from './dashboards/Admindashboard/pages/MaterialsManagement/Deliveries';
+import PurchaseOrders from './dashboards/Admindashboard/pages/MaterialsManagement/PurchaseOrders';
+
+// Project Management
+import AllProjects from './dashboards/Admindashboard/pages/ProjectManagement/AllProjects';
+import CreateProject from './dashboards/Admindashboard/pages/ProjectManagement/CreateProject';
+import Teams from './dashboards/Admindashboard/pages/ProjectManagement/Teams';
+import Scheduling from './dashboards/Admindashboard/pages/ProjectManagement/Scheduling';
+import Budget from './dashboards/Admindashboard/pages/ProjectManagement/Budget';
+import Reports from './dashboards/Admindashboard/pages/ProjectManagement/Reports';
+
+// Finances
+import Invoices from './dashboards/Admindashboard/pages/Finances/Invoices';
+import Payments from './dashboards/Admindashboard/pages/Finances/Payments';
+import Expenses from './dashboards/Admindashboard/pages/Finances/Expenses';
+import BudgetAllocation from './dashboards/Admindashboard/pages/Finances/BudgetAllocation';
+
+// Documents
+import Contracts from './dashboards/Admindashboard/pages/Documents/Contracts';
+import Blueprints from './dashboards/Admindashboard/pages/Documents/Blueprints';
+import Permits from './dashboards/Admindashboard/pages/Documents/Permits';
+import SafetyDocs from './dashboards/Admindashboard/pages/Documents/SafetyDocs';
+
+// Notifications
+import SystemNotifications from './dashboards/Admindashboard/pages/Notifications/SystemNotifications';
+
+// Settings
+import SystemSettings from './dashboards/Admindashboard/pages/Settings/SystemSettings';
+import AdminAccountSettings from './dashboards/Admindashboard/pages/Settings/AccountSettings';
+import AuditLogs from './dashboards/Admindashboard/pages/Settings/AuditLogs';
+import SecurityControls from './dashboards/Admindashboard/pages/Settings/SecurityControls';
 
 function App() {
   return (
@@ -230,6 +290,70 @@ function App() {
         <Route path="payment-methods" element={<PaymentMethods />} />
         <Route path="security" element={<Security />} />
         <Route path="logout" element={<Logout />} />
+      </Route>
+
+      {/* -------------------------- ADMIN DASHBOARD -------------------------- */}
+      <Route path="/admin" element={<AdminLayout />}>
+
+        {/* Admin Dashboard */}
+        <Route path="dashboard" element={<AdminOverview />} />
+
+        {/* User Management */}
+        <Route path="users/all" element={<AllUsers />} />
+        <Route path="users/create" element={<CreateUser />} />
+        <Route path="users/contractors" element={<Contractors />} />
+        <Route path="users/clients" element={<Clients />} />
+        <Route path="users/roles-permissions" element={<RolesPermissions />} />
+
+        {/* Construction Planning */}
+        <Route path="planning/overview" element={<CPOverview />} />
+        <Route path="planning/manage-plans" element={<ManagePlans />} />
+        <Route path="planning/approvals" element={<Approvals />} />
+        <Route path="planning/progress-reports" element={<ProgressReports />} />
+
+        {/* Equipment Management */}
+        <Route path="equipment/inventory" element={<EQInventory />} />
+        <Route path="equipment/approve-requests" element={<EQApproveRequests />} />
+        <Route path="equipment/add" element={<AddEquipment />} />
+        <Route path="equipment/maintenance" element={<Maintenance />} />
+        <Route path="equipment/usage-tracking" element={<UsageTracking />} />
+
+        {/* Materials Management */}
+        <Route path="materials/inventory" element={<MMInventory />} />
+        <Route path="materials/suppliers" element={<SuppliersPage />} />
+        <Route path="materials/approve-requests" element={<MMApproveRequests />} />
+        <Route path="materials/deliveries" element={<Deliveries />} />
+        <Route path="materials/purchase-orders" element={<PurchaseOrders />} />
+
+        {/* Project Management */}
+        <Route path="projects/all" element={<AllProjects />} />
+        <Route path="projects/create" element={<CreateProject />} />
+        <Route path="projects/teams" element={<Teams />} />
+        <Route path="projects/scheduling" element={<Scheduling />} />
+        <Route path="projects/budget" element={<Budget />} />
+        <Route path="projects/reports" element={<Reports />} />
+
+        {/* Finances */}
+        <Route path="finances/invoices" element={<Invoices />} />
+        <Route path="finances/payments" element={<Payments />} />
+        <Route path="finances/expenses" element={<Expenses />} />
+        <Route path="finances/budget-allocation" element={<BudgetAllocation />} />
+
+        {/* Documents */}
+        <Route path="documents/contracts" element={<Contracts />} />
+        <Route path="documents/blueprints" element={<Blueprints />} />
+        <Route path="documents/permits" element={<Permits />} />
+        <Route path="documents/safety-docs" element={<SafetyDocs />} />
+
+        {/* Notifications */}
+        <Route path="notifications/system" element={<SystemNotifications />} />
+
+        {/* Settings */}
+        <Route path="settings/system" element={<SystemSettings />} />
+        <Route path="settings/account" element={<AdminAccountSettings />} />
+        <Route path="settings/audit-logs" element={<AuditLogs />} />
+        <Route path="settings/security-controls" element={<SecurityControls />} />
+
       </Route>
     </Routes>
   );
