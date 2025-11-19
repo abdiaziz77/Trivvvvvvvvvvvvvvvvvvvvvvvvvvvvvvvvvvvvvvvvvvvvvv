@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Blueprints = () => {
+const Blueprint = () => {
   return (
     <div>
       blueprint
@@ -8,4 +8,4 @@ const Blueprints = () => {
   )
 }
 
-export default Blueprints
+export default Blueprint
