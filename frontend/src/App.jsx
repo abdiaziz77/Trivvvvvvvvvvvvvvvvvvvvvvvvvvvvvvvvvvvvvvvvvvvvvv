@@ -55,12 +55,14 @@ import Projects from './dashboards/Userdashboard/pages/Projects';
 import EquipmentRental from './dashboards/Userdashboard/pages/EquipmentRental';
 import MaterialsSuppliesMain from './dashboards/Userdashboard/pages/MaterialsSuppliesMain';
 import AccountSettings from './dashboards/Userdashboard/pages/AccountSettings';
+import ConstructionPlanningMain from './dashboards/Userdashboard/pages/ConstructionPlanningMain';
 
 // -------------------------- SUB DASHBOARDS --------------------------
 import ProjectDashboard from './dashboards/Userdashboard/layout/ProjectDashboard';
 import EquipmentRentalDashboard from './dashboards/Userdashboard/layout/Equipment&RentalDashboard';
 import MaterialsSuppliesDashboard from './dashboards/Userdashboard/layout/Materials&SuppliesDashboard';
 import AccountSettingDashboard from './dashboards/Userdashboard/layout/Account&SettingDashboard';
+import ConstructionPlanningDashboard from './dashboards/Userdashboard/layout/constructionalPlanningDashboard';
 
 // -------------------------- PROJECT SUB PAGES --------------------------
 import ProjectOverview from './dashboards/Userdashboard/pages/ProjectPages/ProjectOverview';
@@ -94,6 +96,18 @@ import AccountSettingsub from './dashboards/Userdashboard/pages/Account&SettingP
 import PaymentMethods from './dashboards/Userdashboard/pages/Account&SettingPages/PaymentMethods';
 import Security from './dashboards/Userdashboard/pages/Account&SettingPages/Security';
 import Logout from './dashboards/Userdashboard/pages/Account&SettingPages/Logout';
+
+// -------------------------- CONSTRUCTION PLANNING SUB PAGES --------------------------
+import NewHouseProject from './dashboards/Userdashboard/pages/ConstructionPanningPage/NewHouseProject';
+import RenovationProjects from './dashboards/Userdashboard/pages/ConstructionPanningPage/RenovationProjects';
+import Payments from './dashboards/Userdashboard/pages/ConstructionPanningPage/Payments';
+import MaterialPlanning from './dashboards/Userdashboard/pages/ConstructionPanningPage/MaterialPlanning';
+import TaskScheduling from './dashboards/Userdashboard/pages/ConstructionPanningPage/TaskScheduling';
+import Blueprints from './dashboards/Userdashboard/pages/ConstructionPanningPage/Blueprints';
+import WorkforceManagement from './dashboards/Userdashboard/pages/ConstructionPanningPage/WorkforceManagement';
+import ConstructionChat from './dashboards/Userdashboard/pages/ConstructionPanningPage/ConstructionChat';
+import PlanningOverview from './dashboards/Userdashboard/pages/ConstructionPanningPage/PlanningOverview';
+
 
 // -------------------------- ADMIN DASHBOARD --------------------------
 import AdminLayout from './dashboards/Admindashboard/layout/AdminLayout';
@@ -137,13 +151,13 @@ import Reports from './dashboards/Admindashboard/pages/ProjectManagement/Reports
 
 // Finances
 import Invoices from './dashboards/Admindashboard/pages/Finances/Invoices';
-import Payments from './dashboards/Admindashboard/pages/Finances/Payments';
+import FinancePayments from './dashboards/Admindashboard/pages/Finances/FinancePayments';
 import Expenses from './dashboards/Admindashboard/pages/Finances/Expenses';
 import BudgetAllocation from './dashboards/Admindashboard/pages/Finances/BudgetAllocation';
 
 // Documents
 import Contracts from './dashboards/Admindashboard/pages/Documents/Contracts';
-import Blueprints from './dashboards/Admindashboard/pages/Documents/Blueprints';
+import Blueprint from './dashboards/Admindashboard/pages/Documents/Blueprints';
 import Permits from './dashboards/Admindashboard/pages/Documents/Permits';
 import SafetyDocs from './dashboards/Admindashboard/pages/Documents/SafetyDocs';
 
@@ -156,132 +170,139 @@ import AdminAccountSettings from './dashboards/Admindashboard/pages/Settings/Acc
 import AuditLogs from './dashboards/Admindashboard/pages/Settings/AuditLogs';
 import SecurityControls from './dashboards/Admindashboard/pages/Settings/SecurityControls';
 
+
+
+
 function App() {
   return (
-    <Routes>
-      {/* -------------------------- PUBLIC LAYOUT -------------------------- */}
-      <Route
-        path="/*"
-        element={
-          <div className="App min-h-screen flex flex-col">
-            <Navbar />
-            <main className="flex-grow">
-              <Routes>
-                {/* Public Pages */}
-                <Route path="/" element={<Home />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<SignUp />} />
+    
+      <Routes>
+        {/* -------------------------- PUBLIC LAYOUT -------------------------- */}
+        <Route
+          path="/*"
+          element={
+            <div className="App min-h-screen flex flex-col">
+              <Navbar />
+              <main className="flex-grow">
+                <Routes>
+                  {/* Public Pages */}
+                  <Route path="/" element={<Home />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/signup" element={<SignUp />} />
 
-                {/* About Routes */}
-                <Route path="/about" element={<OurCompany />} />
-                <Route path="/about/company" element={<OurCompany />} />
-                <Route path="/about/leaders" element={<Leaders />} />
-                <Route path="/about/management" element={<Management />} />
-                <Route path="/about/join" element={<JoinTeam />} />
+                  {/* About Routes */}
+                  <Route path="/about" element={<OurCompany />} />
+                  <Route path="/about/company" element={<OurCompany />} />
+                  <Route path="/about/leaders" element={<Leaders />} />
+                  <Route path="/about/management" element={<Management />} />
+                  <Route path="/about/join" element={<JoinTeam />} />
 
-                {/* Services */}
-                <Route path="/services/renovation" element={<BuildingConstruction />} />
-                <Route path="/services/interior" element={<InteriorFinishing />} />
-                <Route path="/services/roofing" element={<RoofingSolutions />} />
-                <Route path="/services/foundation" element={<FoundationRepair />} />
-                <Route path="/services/electrical" element={<ElectricalAndPlumbing />} />
-                <Route path="/services/government" element={<Government />} />
+                  {/* Services */}
+                  <Route path="/services/renovation" element={<BuildingConstruction />} />
+                  <Route path="/services/interior" element={<InteriorFinishing />} />
+                  <Route path="/services/roofing" element={<RoofingSolutions />} />
+                  <Route path="/services/foundation" element={<FoundationRepair />} />
+                  <Route path="/services/electrical" element={<ElectricalAndPlumbing />} />
+                  <Route path="/services/government" element={<Government />} />
 
-                {/* Projects */}
-                <Route path="/projects/featured" element={<Featured />} />
+                  {/* Projects */}
+                  <Route path="/projects/featured" element={<Featured />} />
 
-                {/* Equipment */}
-                <Route path="/equipment" element={<OurMachinery />} />
-                <Route path="/equipment/machinery" element={<OurMachinery />} />
-                <Route path="/equipment/workshop" element={<WorkshopAndMaintenanceYard />} />
-                <Route path="/equipment/materials" element={<MaterialsAndHardwareStores />} />
-                <Route path="/equipment/warehouse" element={<WarehouseAndLogistics />} />
-                <Route path="/equipment/safety" element={<SafetyAndProtectedGear />} />
+                  {/* Equipment */}
+                  <Route path="/equipment" element={<OurMachinery />} />
+                  <Route path="/equipment/machinery" element={<OurMachinery />} />
+                  <Route path="/equipment/workshop" element={<WorkshopAndMaintenanceYard />} />
+                  <Route path="/equipment/materials" element={<MaterialsAndHardwareStores />} />
+                  <Route path="/equipment/warehouse" element={<WarehouseAndLogistics />} />
+                  <Route path="/equipment/safety" element={<SafetyAndProtectedGear />} />
 
-                {/* Technology */}
-                <Route path="/technology" element={<SmartConstruction />} />
-                <Route path="/technology/smart" element={<SmartConstruction />} />
-                <Route path="/technology/sustainability" element={<Sustainability />} />
-                <Route path="/technology/quality" element={<QualityAssurance />} />
-                <Route path="/technology/training" element={<TrainingAndDevelopment />} />
+                  {/* Technology */}
+                  <Route path="/technology" element={<SmartConstruction />} />
+                  <Route path="/technology/smart" element={<SmartConstruction />} />
+                  <Route path="/technology/sustainability" element={<Sustainability />} />
+                  <Route path="/technology/quality" element={<QualityAssurance />} />
+                  <Route path="/technology/training" element={<TrainingAndDevelopment />} />
 
-                {/* Blogs */}
-                <Route path="/blog" element={<CompanyNews />} />
-                <Route path="/blog/company-news" element={<CompanyNews />} />
-                <Route path="/blog/construction-tips" element={<ConstructionTips />} />
-                <Route path="/blog/safety" element={<SafetyAndSustainability />} />
-                <Route path="/blog/industry-updates" element={<IndustryUpdates />} />
+                  {/* Blogs */}
+                  <Route path="/blog" element={<CompanyNews />} />
+                  <Route path="/blog/company-news" element={<CompanyNews />} />
+                  <Route path="/blog/construction-tips" element={<ConstructionTips />} />
+                  <Route path="/blog/safety" element={<SafetyAndSustainability />} />
+                  <Route path="/blog/industry-updates" element={<IndustryUpdates />} />
 
-                {/* 404 */}
-                <Route
-                  path="*"
-                  element={
-                    <div className="container mx-auto px-4 py-16 text-center">
-                      <h1 className="text-4xl font-bold text-gray-800 mb-4">
-                        404 - Page Not Found
-                      </h1>
-                      <p className="text-gray-600 mb-8">
-                        The page you are looking for doesn't exist.
-                      </p>
-                      <a
-                        href="/"
-                        className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition duration-300"
-                      >
-                        Go Back Home
-                      </a>
-                    </div>
-                  }
-                />
-              </Routes>
-            </main>
-            <Footer />
-          </div>
-        }
-      />
+                  {/* 404 */}
+                  <Route
+                    path="*"
+                    element={
+                      <div className="container mx-auto px-4 py-16 text-center">
+                        <h1 className="text-4xl font-bold text-gray-800 mb-4">
+                          404 - Page Not Found
+                        </h1>
+                        <p className="text-gray-600 mb-8">
+                          The page you are looking for doesn't exist.
+                        </p>
+                        <a
+                          href="/"
+                          className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition duration-300"
+                        >
+                          Go Back Home
+                        </a>
+                      </div>
+                    }
+                  />
+                </Routes>
+              </main>
+              <Footer />
+            </div>
+          }
+        />
 
-      {/* -------------------------- MAIN USER DASHBOARD -------------------------- */}
-      <Route path="/user" element={<UserLayout />}>
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="projects" element={<Projects />} />
-        <Route path="equipment-rental" element={<EquipmentRental />} />
-        <Route path="materials-supplies" element={<MaterialsSuppliesMain />} />
-        <Route path="account-settings" element={<AccountSettings />} />
-      </Route>
+        {/* -------------------------- MAIN USER DASHBOARD -------------------------- */}
+        <Route path="/user" element={<UserLayout />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="equipment-rental" element={<EquipmentRental />} />
+          <Route path="materials-supplies" element={<MaterialsSuppliesMain />} />
+          <Route path="account-settings" element={<AccountSettings />} />
+          <Route path="construction-planning" element={<ConstructionPlanningMain />} />
+        </Route>
 
-      {/* -------------------------- SUB DASHBOARDS -------------------------- */}
+        {/* -------------------------- SUB DASHBOARDS -------------------------- */}
+        {/* Project Dashboard */}
+        <Route path="/user/projects-dashboard" element={<ProjectDashboard />}>
+          <Route index element={<ProjectOverview />} />
+          <Route path="overview" element={<ProjectOverview />} />
+          <Route path="my-projects" element={<MyProjects />} />
+          <Route path="start-new" element={<StartNewProject />} />
+          <Route path="budget-costing" element={<ProjectBudgetCosting />} />
+          <Route path="timeline" element={<ProjectTimelineGanttChart />} />
+          <Route path="documents" element={<DocumentsBlueprints />} />
+          <Route path="engineers" element={<EngineersExperts />} />
+          <Route path="chat" element={<CommunicationChat />} />
+        </Route>
 
-      {/* Project Dashboard */}
-      <Route path="/user/projects-dashboard" element={<ProjectDashboard />}>
-        <Route path="overview" element={<ProjectOverview />} />
-        <Route path="my-projects" element={<MyProjects />} />
-        <Route path="start-new" element={<StartNewProject />} />
-        <Route path="budget-costing" element={<ProjectBudgetCosting />} />
-        <Route path="timeline" element={<ProjectTimelineGanttChart />} />
-        <Route path="documents" element={<DocumentsBlueprints />} />
-        <Route path="engineers" element={<EngineersExperts />} />
-        <Route path="chat" element={<CommunicationChat />} />
-      </Route>
+        {/* Equipment & Rental Dashboard */}
+        <Route path="/user/equipment-dashboard" element={<EquipmentRentalDashboard />}>
+          <Route index element={<RentalOverview />} />
+          <Route path="browse-equipment" element={<BrowseEquipment />} />
+          <Route path="my-rentals" element={<MyRentals />} />
+          <Route path="rental-history" element={<RentalHistory />} />
+          <Route path="rental-overview" element={<RentalOverview />} />
+          <Route path="rental-payments" element={<RentalPayments />} />
+          <Route path="help" element={<HelpContactTeam />} />
+        </Route>
 
-      {/* Equipment & Rental Dashboard */}
-      <Route path="/user/equipment-dashboard" element={<EquipmentRentalDashboard />}>
-        <Route path="browse-equipment" element={<BrowseEquipment />} />
-        <Route path="my-rentals" element={<MyRentals />} />
-        <Route path="rental-history" element={<RentalHistory />} />
-        <Route path="rental-overview" element={<RentalOverview />} />
-        <Route path="rental-payments" element={<RentalPayments />} />
-        <Route path="help" element={<HelpContactTeam />} />
-      </Route>
-
-      {/* Materials & Supplies Dashboard */}
-      <Route path="/user/materials-dashboard" element={<MaterialsSuppliesDashboard />}>
-        <Route path="browse-materials" element={<BrowseMaterials />} />
-        <Route path="material-categories" element={<MaterialCategories />} />
-        <Route path="materials-overview" element={<MaterialsOverview />} />
-        <Route path="my-orders" element={<MyOrders />} />
-        <Route path="payment" element={<Payment />} />
-        <Route path="suppliers" element={<Suppliers />} />
-      </Route>
+        {/* Materials & Supplies Dashboard */}
+        <Route path="/user/materials-dashboard" element={<MaterialsSuppliesDashboard />}>
+          <Route index element={<MaterialsOverview />} />
+          <Route path="browse-materials" element={<BrowseMaterials />} />
+          <Route path="material-categories" element={<MaterialCategories />} />
+          <Route path="materials-overview" element={<MaterialsOverview />} />
+          <Route path="my-orders" element={<MyOrders />} />
+          <Route path="payment" element={<Payment />} />
+          <Route path="suppliers" element={<Suppliers />} />
+        </Route>
 
       {/* Account & Settings Dashboard */}
       <Route path="/user/account-dashboard" element={<AccountSettingDashboard />}>
@@ -290,7 +311,22 @@ function App() {
         <Route path="payment-methods" element={<PaymentMethods />} />
         <Route path="security" element={<Security />} />
         <Route path="logout" element={<Logout />} />
+          </Route>
+
+             {/* Construction Planning Dashboard */}
+      <Route path="/user/construction-planning-dashboard" element={<ConstructionPlanningDashboard />}>
+        <Route path="overview" element={<PlanningOverview />} />
+        <Route path="new-house" element={<NewHouseProject />} />
+        <Route path="renovations" element={<RenovationProjects />} />
+        <Route path="payments" element={<Payments />} />
+        <Route path="materials" element={<MaterialPlanning />} />
+       <Route path="scheduling" element={<TaskScheduling />} />
+       <Route path="blueprints" element={<Blueprints />} />
+       <Route path="workforce" element={<WorkforceManagement />} />
+       <Route path="chat" element={<ConstructionChat />} />
       </Route>
+
+    
 
       {/* -------------------------- ADMIN DASHBOARD -------------------------- */}
       <Route path="/admin" element={<AdminLayout />}>
@@ -335,13 +371,13 @@ function App() {
 
         {/* Finances */}
         <Route path="finances/invoices" element={<Invoices />} />
-        <Route path="finances/payments" element={<Payments />} />
+        <Route path="finances/payments" element={<FinancePayments />} />
         <Route path="finances/expenses" element={<Expenses />} />
         <Route path="finances/budget-allocation" element={<BudgetAllocation />} />
 
         {/* Documents */}
         <Route path="documents/contracts" element={<Contracts />} />
-        <Route path="documents/blueprints" element={<Blueprints />} />
+        <Route path="documents/blueprints" element={<Blueprint />} />
         <Route path="documents/permits" element={<Permits />} />
         <Route path="documents/safety-docs" element={<SafetyDocs />} />
 
@@ -354,7 +390,7 @@ function App() {
         <Route path="settings/audit-logs" element={<AuditLogs />} />
         <Route path="settings/security-controls" element={<SecurityControls />} />
 
-      </Route>
+      </Route>   
     </Routes>
   );
 }

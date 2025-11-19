@@ -41,6 +41,15 @@ const UserSidebar = () => {
       icon: <FiUsers className="text-xl" />,
       basePath: "/user/materials-dashboard",
     },
+
+    // ⭐ NEW MENU ITEM ADDED ⭐
+    {
+      name: "Constructional Planning",
+      path: "/user/construction-planning-dashboard",
+      icon: <FiTool className="text-xl" />,
+      basePath: "/user/construction-planning-dashboard",
+    },
+
     {
       name: "Account & Settings",
       path: "/user/account-dashboard/profile",
@@ -55,11 +64,12 @@ const UserSidebar = () => {
 
   return (
     <div className={`bg-white/80 backdrop-blur-sm border-r border-[#F4B942]/20 flex flex-col transition-all duration-300 ${isCollapsed ? 'w-20' : 'w-64'} relative overflow-hidden`}>
-      {/* Orange Gradient Overlay with Opacity */}
+      {/* Orange Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#F4B942]/10 to-[#F4B942]/5 pointer-events-none"></div>
       
       {/* Content */}
       <div className="relative z-10 flex flex-col h-full">
+        
         {/* Logo Section */}
         <div className={`p-6 flex items-center justify-between border-b border-[#F4B942]/10 ${isCollapsed ? 'flex-col space-y-2' : ''}`}>
           {!isCollapsed ? (
@@ -72,7 +82,7 @@ const UserSidebar = () => {
                   <h1 className="text-xl font-black text-gray-900 tracking-tight leading-none group-hover:text-[#F4B942] transition duration-300">
                     engaNow
                   </h1>
-                  <p className="text-xs font-semibold text-[#F4B942] tracking-widest uppercase leading-none pt-1">
+                  <p className="text-xs font-semibold text-[#F4B842] tracking-widest uppercase leading-none pt-1">
                     CONSTRUCTION
                   </p>
                 </div>
@@ -92,7 +102,7 @@ const UserSidebar = () => {
           </button>
         </div>
 
-        {/* Navigation Menu */}
+        {/* Navigation */}
         <nav className="flex-1 px-4 py-6">
           {menuItems.map((item) => {
             const isActive = location.pathname.startsWith(item.basePath);
@@ -108,7 +118,6 @@ const UserSidebar = () => {
                 } ${isCollapsed ? 'justify-center' : ''}`}
                 title={isCollapsed ? item.name : ''}
               >
-                {/* Active state background glow */}
                 {isActive && (
                   <div className="absolute inset-0 bg-[#F4B942]/10 rounded-xl"></div>
                 )}
@@ -116,6 +125,7 @@ const UserSidebar = () => {
                 <div className={`relative z-10 ${isActive ? 'text-[#F4B942]' : 'text-gray-500 group-hover:text-[#F4B942]'}`}>
                   {item.icon}
                 </div>
+
                 {!isCollapsed && (
                   <span className={`relative z-10 font-bold text-sm ${isActive ? 'text-[#F4B942]' : 'text-gray-800 group-hover:text-[#F4B942]'}`}>
                     {item.name}
@@ -126,7 +136,7 @@ const UserSidebar = () => {
           })}
         </nav>
 
-        {/* Collapsed Menu Helper */}
+        {/* Collapsed footer icon */}
         {isCollapsed && (
           <div className="p-4 border-t border-[#F4B942]/10 text-center relative z-10">
             <FiMenu className="text-[#F4B942]/40 text-lg mx-auto" />
